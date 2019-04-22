@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+	<title>Django Level Two</title>
+	<link rel="stylesheet" href="{% static "css/mystyle.css"%}"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<h1>HI... Welcome to Django Level Two..!!!</h1>
+		<h2>Here are youre Access Records</h2>
+		<h3>Go To /users to see the user list</h3>
+		<a href="/users"  class= "btn btn-primary">Users</a>
+	</div>
+
+<div class="container">
+	<div class="djangotwo">
+	{% if acess_records %}
+		<table border = 1 class="table table-bordered" style="margin-top: 50px;">
+			<thead>
+				<td><b>Site Name</b></td>
+				<td><b>Date Accessed</b></td>
+			</thead>
+			{% for acc in acess_records%}
+			<tr>
+				<td>{{acc.name}}</td>
+				<td>{{acc.date}}</td>
+			</tr>
+			{% endfor %}
+		</table>
+		{% else %}
+		<p> NO ACCESS RECORDS FOUND!!</p>
+	{% endif %}
+	</div>
+</div>
+
+</body>
+</html>

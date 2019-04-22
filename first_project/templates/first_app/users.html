@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+	<title>Users</title>
+	<link rel="stylesheet" href="{% static "css/mystyle.css"%}"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+		<h1>HI... Welcome to Django Level Two..!!!</h1>
+		<h2>Here are youre Access Users Records</h2>
+		
+		<!--<a href="index"  class= "btn btn-primary">Back to Index</a>-->
+</div>
+<br>
+<!-- <div class="container">
+	<h1>Here are your users for frist-app</h1>
+	{% if users %}
+		<ol>
+			{% for person in users %}
+				<li>User Info</li>
+				<ul>
+					<li>First Name: {{person.first_name}}</li>
+					<li>Last Name:{{person.last_name}}</li>
+					<li>Email:{{person.email}}</li>
+				</ul>
+			{% endfor %}
+		</ol>
+	{% endif %}
+</div> -->
+<div class="container">
+	<h1>Here are your Users from first_app</h1>
+	{% if users %}
+	<table>
+		<thead>
+			<td>First Name</td>
+			<td>Last Name</td>
+			<td>Email</td>
+		</thead>
+		{% for peron in users %}
+	</table>
+</div>
+</body>
+</html>
